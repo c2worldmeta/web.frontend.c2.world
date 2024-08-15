@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Scroll Universe Portal" Badge Of C².WORLD</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* 背景图 */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container {
+            width: 70%;
+            max-width: 1000px;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 0px 0;
+        }
+
+        .logo img {
+            max-width: 160px;
+        }
+
+        .video-section {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9的比例 */
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .video-section iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .tasks {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .task {
+            width: 20%;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明的白色背景 */
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .task img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .task-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .task button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .task button:hover {
+            background-color: #0056b3;
+        }
+
+        .arrow {
+            width: 60px;
+            height: 60px;
+            background-image: url('arrow.png'); /* 箭头图标 */
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 0px;
+        }
+
+        .sidebar {
+            width: 30%;
+            background-color: rgba(0, 0, 0, 0.7); /* 较暗的背景色 */
+            color: #ccc; /* 较浅的字体颜色 */
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-section {
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(40, 40, 40, 0.9); /* 较暗的区域背景色 */
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 5px;
+            filter: brightness(0.8); /* 图标颜色稍微变暗 */
+        }
+
+        .sidebar-section p {
+            font-size: 13px;
+            color: #ccc; /* 较浅的文字颜色 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo区域 -->
+        <div class="logo">
+            <a href="https://www.c2.world" target="_blank"><img src="logo.png" alt="Logo"></a>
+        </div>
+
+        <!-- 视频介绍区域 -->
+        <div class="video-section">
+            <!--iframe src="https://www.youtube.com/embed/4sN_iDkQYjs?si=5dv8scALTsVcYOSv?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe-->
+            <iframe src="https://www.youtube.com/embed/4sN_iDkQYjs?si=5dv8scALTsVcYOSv?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- 任务操作区域 -->
+        <div class="tasks">
+            <div class="task">
+                <img src="task1.jpg" alt="任务1">
+                <!--div class="task-title">任务一</div-->
+                <button><b>STEP 1</b><br><i>Follow Our X(Twitter)</i></button>
+            </div>
+            <div class="arrow"></div>
+            <div class="task">
+                <img src="task2.jpg" alt="任务2">
+                <!--div class="task-title">Get “First Citizen”</div-->
+                <button><b>STEP 2</b><br><i>Get “First Citizen” NFT</i></button>
+            </div>
+            <div class="arrow"></div>
+            <div class="task">
+                <img src="task3.jpg" alt="任务3">
+                <!--div class="task-title">任务三</div-->
+                <button><b>STEP 3</b><br><i>Get Blind Box & "Scroll Universe Portal" <font color="#FF9988">Badge</font></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧栏区域 -->
+    <div class="sidebar">
+        <h3 align="center">DESCRIPTION</h3>
+        <div class="sidebar-section">
+            <img src="badge.png" alt="图标3">
+            <p><b>"Scroll Universe Portal" <font color="#FF9988">Badge</font></b><br> Users who complete quests and mint relevant NFTS on the C².WORLD platform will receive a Scroll Universe Portal badge.  Holders of this badge not only highlight the unique commemorative value and exclusive honor of the first citizens, but also receive a super value reward when the blind box NFT is opened.</p>
+        </div>
+        <div class="sidebar-section">
+            <img src="task2.jpg" alt="图标1">
+            <p><b>"First Citizens" NFT</b><br> C².WORLD's educational metaverse product offers an exclusive commemorative NFT named "First Citizen" for our first batch of users. This NFT symbolizes the user's status as an early participant and contributor. It is non-transferable and cannot be traded, emphasizing its unique commemorative value and exclusivity. By holding the "First Citizen," users become a part of the C².WORLD community, enjoying future exclusive benefits and honors.</p>
+        </div>
+        <div class="sidebar-section">
+            <img src="task3.jpg" alt="图标2">
+            <p><b>"First Citizens Blind Box 000" NFT</b><br> The blind box will be opened at the launch of the project to super economic value NFT rewards  and significance, including but not limited to platform tokens, creative materials, land, artwork, pet companions, etc. Each blind box is full of infinite possibilities, providing users with the opportunity to explore and access precious resources, adding more surprises and fun.</p>
+        </div>
+    </div>
+</body>
+
+</html>
