@@ -5,135 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"Scroll C2 Portal" Badge Of C².WORLD</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('background.jpg'); /* 背景图 */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .container {
-            width: 70%;
-            max-width: 1000px;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .logo {
-            text-align: center;
-            padding: 0px 0;
-        }
-
-        .logo img {
-            max-width: 160px;
-        }
-
-        .video-section {
-            width: 100%;
-            padding-top: 56.25%; /* 16:9的比例 */
-            position: relative;
-            margin: 10px 0;
-        }
-
-        .video-section iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .tasks {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .task {
-            width: 20%;
-            background-color: rgba(255, 255, 255, 0.8); /* 半透明的白色背景 */
-            border-radius: 10px;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .task img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .task-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .task button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .task button:hover {
-            background-color: #0056b3;
-        }
-
-        .arrow {
-            width: 60px;
-            height: 60px;
-            background-image: url('arrow.png'); /* 箭头图标 */
-            background-size: contain;
-            background-repeat: no-repeat;
-            margin: 0 0px;
-        }
-
-        .sidebar {
-            width: 30%;
-            background-color: rgba(0, 0, 0, 0.7); /* 较暗的背景色 */
-            color: #ccc; /* 较浅的字体颜色 */
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .sidebar-section {
-            text-align: left;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(40, 40, 40, 0.9); /* 较暗的区域背景色 */
-            margin-bottom: 20px;
-        }
-
-        .sidebar-section img {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
-            height: 100px;
-            margin-bottom: 5px;
-            filter: brightness(0.8); /* 图标颜色稍微变暗 */
-        }
-
-        .sidebar-section p {
-            font-size: 13px;
-            color: #ccc; /* 较浅的文字颜色 */
-        }
-    </style>
+    <link rel="bookmark" type="image/x-icon" href="favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.min.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+    <script src="index.min.js"></script>
 </head>
 
 <body>
@@ -151,7 +29,7 @@
 
         <!-- 任务操作区域 -->
         <div class="tasks">
-            <div class="task">
+            <div class="task" onclick="window.open('https://x.com/c2worldmeta', '_blank');">
                 <img src="task1.jpg" alt="任务1">
                 <!--div class="task-title">任务一</div-->
                 <button><b>STEP 1</b><br><i>Follow Our X(Twitter)</i></button>
@@ -160,13 +38,13 @@
             <div class="task">
                 <img src="task2.jpg" alt="任务2">
                 <!--div class="task-title">Get “First Citizen”</div-->
-                <button><b>STEP 2</b><br><i>Get “First Citizen” NFT</i></button>
+                <button><b>STEP 2</b><br><i>Mint “First Citizen” NFT</i></button>
             </div>
             <div class="arrow"></div>
             <div class="task">
                 <img src="task3.jpg" alt="任务3">
                 <!--div class="task-title">任务三</div-->
-                <button><b>STEP 3</b><br><i>Get Blind Box & "Scroll C2 Portal" <font color="#FF9988">Badge</font></i></button>
+                <button><b>STEP 3</b><br><i>Mint Blind Box & "Scroll C2 Portal" <font color="#FF9988">Badge</font></i></button>
             </div>
         </div>
     </div>
@@ -187,6 +65,51 @@
             <p><b>"First Citizens Blind Box 000" NFT</b><br> The blind box will be opened at the launch of the project to super economic value NFT rewards  and significance, including but not limited to platform tokens, creative materials, land, artwork, pet companions, etc. Each blind box is full of infinite possibilities, providing users with the opportunity to explore and access precious resources, adding more surprises and fun.</p>
         </div>
     </div>
+    <div id="loadingWalletConnect" class="modal-container " style="position: fixed;display:none;">
+        <div class="modal-body" style="height: 100vh;">
+            <div class="modal-img"></div>
+            <div class="modal-bg1" style="background: none; border-radius: 2.7rem;">
+                <div class="modal-bg2"
+                    style="background: none; width: 100%; height: 100%; margin: -0.6rem auto; padding: 4.2rem 2.7rem 6.399rem; border-radius: 2.7rem;">
+                    <div class="modal-loading-icon-container">
+                        <div id="loadingIcon" class="modal-loading-icon"></div>
+                    </div>
+                    <div class="modal-loading-txt">Connecting wallet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="walletNotification" class="c2-notification c2-notification-topRight" style="right: 0px; top: 24px; bottom: auto;display:none;">
+        <div>
+            <div class="c2-notification-notice c2-notification-notice-error c2-notification-notice-closable"
+                style="background-color: rgb(118, 0, 33);">
+                <div class="c2-notification-notice-content">
+                    <div class="c2-notification-notice-with-icon" role="alert"><span role="img" aria-label="close-circle"
+                            class="anticon anticon-close-circle c2-notification-notice-icon c2-notification-notice-icon-error"><svg
+                                viewBox="64 64 896 896" focusable="false" data-icon="close-circle" width="1em" height="1em"
+                                fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+                                </path>
+                                <path
+                                    d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+                                </path>
+                            </svg></span>
+                        <div class="c2-notification-notice-message"><span
+                                class="c2-notification-notice-message-single-line-auto-margin"></span>FAILED!</div>
+                        <div class="c2-notification-notice-description"></div>
+                    </div>
+                </div><a tabindex="0" class="c2-notification-notice-close"><span
+                        class="c2-notification-notice-close-x"><span role="img" aria-label="close"
+                            class="anticon anticon-close c2-notification-notice-close-icon"><svg viewBox="64 64 896 896"
+                                focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+                                </path>
+                            </svg></span></span></a>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
