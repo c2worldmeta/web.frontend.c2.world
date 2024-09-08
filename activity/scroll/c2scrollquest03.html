@@ -215,7 +215,6 @@
             wxAppArgsStringGet = Module.cwrap('wxAppArgsStringGet', 'string', []);
             RotateCanvas();
             SubOrientationChangeEvent();
-            console.log("voxel-style world scene loaded successfully.");
             if(document.querySelectorAll(".modal-loading-txt")[0].innerText === "Loading a voxel-style world scene...")
               showModal("Loading a voxel-style world scene...",false);
             var json = {
