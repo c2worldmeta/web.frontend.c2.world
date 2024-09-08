@@ -1,0 +1,296 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"Scroll C2 1stJourney" Badge Of C².WORLD</title>
+<link rel="stylesheet" href="common4.min.css">
+<script defer="defer" src="index4.min.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+    <style>
+        #canvas {
+            top: 0;
+            left: 0;
+        }
+#cursor-mode-container {
+    position: absolute;
+    top: 77rem;
+    left: 3.6rem;
+    background-color: rgba(11,30,36,0.5);
+    color: #ffffff;
+    padding: 1.5rem;
+    text-shadow: 0.1rem 0.1rem black;
+}
+#cursor-mode-state {
+    font-size: 2.4rem;
+}
+#cursor-mode-tip {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+<canvas id="canvas" width="1" height="1">
+    Please use a browser that supports "canvas"
+</canvas>
+<div id="root" class="modal-container" style="position: fixed; z-index: 99;">
+  <div class="layout mainContainer--kwxZt">
+    <div id="marketdetail" style="position: absolute; width: 100%; z-index: 20;height: 100%">
+      <div style="position: relative; overflow: hidden; width: 100%; height: 100%;">
+        <div style="position: absolute; inset: 0px; margin-right: -19px; margin-bottom: -19px;">
+          <div class="pageContent--g6UY4" style="background-color: #00000000;height: 100%;">
+            <div class="pageMain--7gVBJ" style="justify-content: center;display: flex;">
+              <div class="assetView--Q8Z80"
+                style="background-color: #0a0624;margin-top: 17%;width: 50%;min-width: 880px;padding: 25px 0px;">
+                <div class="assetInfoWrapper--EcQSi" style="width: 80%;gap: 40px;">
+                  <div class="assetInfoContainer--r82Tq" id="itemdetail">
+                    <div class="generalInfoContainer--1Ll4u" style="width: 30vh;">
+                      <div class="assetCardWrapper--AxzBz" style="height: 30vh;width: 30vh;margin-left: 0px;">
+                        <div class="assetCardContainer--K4wJj">
+                          <div class="assetDisplay--+LOSO">
+                            <div class="assetDisplayBackgroundCommon"></div>
+                            <div class="assetDisplayContainer--vho0M" style="height: 30vh;width: 30vh;">
+                              <div class="assetImage--Sntq1" id="itemdetailicon"
+                                style="background: url(&quot;./FirstJourney/FirstJourney.jpg&quot;) center center / contain no-repeat;">
+                              </div>
+                            </div>
+                            <div class="assetDisplayFooter--oPi0N"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="stickyInfoContainer--lOfUt">
+                      <div class="assetMarketSummaryContainer--tTwun"  style="margin-left: 0px;">
+                        <div class="body--d-fqh">
+                          <p class="title---n72C" id="itemdetailname">First Journey</p>
+                          <div class="creatorTagContainer--QAiMU">
+                            <div class="creatorTextContainer--mm8PN"><span>By minting the "First Journey" commemorative NFT, users will gain early access to explore a voxel-style world scene UGC in C².WORLD. After C².WORLD launches, holders of this NFT will receive special SCP2Earn rewards, further enhancing their interaction and earning experience on the platform.</span></div>
+                          </div>
+                        </div>
+                        <div class="assetMarketSaleContainer--jk+Tz">
+                          <div class="actionsContainer--Q4z50"><button id="itemdetailbuy" color="primary"
+                              type="button" class="customButton--Magt5" tokenid="6">Mint</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="c2-message">
+    <div>
+      <div class="c2-message-notice" style="display:none">
+        <div class="c2-message-notice-content">
+          <div class="c2-message-custom-content c2-message-success"><span role="img" aria-label="check-circle"
+              class="anticon anticon-check-circle"><svg viewBox="64 64 896 896" focusable="false"
+                data-icon="check-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z">
+                </path>
+              </svg></span><span>Server Connection Succeeded</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="loadingWalletConnect" class="modal-container " style="position: fixed; display: none; z-index: 999;">
+  <div class="modal-body" style="height: 100vh;">
+    <div class="modal-img"></div>
+    <div class="modal-bg1" style="background: none; border-radius: 2.7rem;">
+      <div class="modal-bg2"
+        style="background: none; width: 100%; height: 100%; margin: -0.6rem auto; padding: 4.2rem 2.7rem 6.399rem; border-radius: 2.7rem;">
+        <div class="modal-loading-icon-container">
+          <div id="loadingIcon" class="modal-loading-icon"></div>
+        </div>
+        <div class="modal-loading-txt">Connecting wallet</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="walletNotification" class="c2-notification c2-notification-topRight"
+  style="right: 0px; top: 24px; bottom: auto;display:none;">
+  <div>
+    <div class="c2-notification-notice c2-notification-notice-error c2-notification-notice-closable"
+      style="background-color: rgb(118, 0, 33);">
+      <div class="c2-notification-notice-content">
+        <div class="c2-notification-notice-with-icon" role="alert"><span role="img" aria-label="close-circle"
+            class="anticon anticon-close-circle c2-notification-notice-icon c2-notification-notice-icon-error"><svg
+              viewBox="64 64 896 896" focusable="false" data-icon="close-circle" width="1em" height="1em"
+              fill="currentColor" aria-hidden="true">
+              <path
+                d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z">
+              </path>
+              <path
+                d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z">
+              </path>
+            </svg></span>
+          <div class="c2-notification-notice-message"><span
+              class="c2-notification-notice-message-single-line-auto-margin"></span>FAILED!</div>
+          <div class="c2-notification-notice-description"></div>
+        </div>
+      </div><a tabindex="0" class="c2-notification-notice-close"><span class="c2-notification-notice-close-x"><span
+            role="img" aria-label="close" class="anticon anticon-close c2-notification-notice-close-icon"><svg
+              viewBox="64 64 896 896" focusable="false" data-icon="close" width="1em" height="1em" fill="currentColor"
+              aria-hidden="true">
+              <path
+                d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+              </path>
+            </svg></span></span></a>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+    function ParseGETParameters(Key) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == Key) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+
+    temp = ParseGETParameters("appname");
+    if (temp == false)
+    //gg_AppName= "0";
+        gg_AppName = "Default App";
+    else
+        gg_AppName = temp;
+
+    temp = ParseGETParameters("appurl");
+    if (temp == false) {
+        gg_AppURL = "./app.wx";
+    }
+    else
+        gg_AppURL = decodeURIComponent(temp);
+
+    temp = ParseGETParameters("userdata");
+    if (temp == false)
+        gg_UserData = "";
+    else
+        gg_UserData = decodeURIComponent(temp);
+
+    var Module = {
+        canvas: (function () {
+            var canvas = document.getElementById('canvas');
+            canvas.addEventListener("webglcontextlost", function (e) {
+                alert('WebGL context lost. You will need to reload the page.');
+                e.preventDefault();
+            }, false);
+            return canvas;
+        })(),
+        postRun: [(function () {
+            wxWindowResize = Module.cwrap('wxWindowResize', 'null', ['number'], ['number']);
+            wxHUDPrint = Module.cwrap('wxHUDPrint', 'null', ['string']);
+            wxAppArgsStringGet = Module.cwrap('wxAppArgsStringGet', 'string', []);
+            RotateCanvas();
+            SubOrientationChangeEvent();
+            if(document.getElementById("root").style.display === "none")
+              showModal("Loading a voxel-style world scene...",false);
+            var json = {
+                "code": 3,
+                "msg": "none",
+            };
+            parent.postMessage(JSON.stringify(json), "*");
+        })],
+        print: (function () {
+            var element = document.getElementById('output');
+            if (element) element.value = ''; // clear browser cache
+            return function (text) {
+                if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                //console.log(text);
+                if (element) {
+                    element.value += text + "\n";
+                    element.scrollTop = element.scrollHeight; // focus on bottom
+                }
+            };
+        })(),
+        arguments: "sdff23752305&^%&^$**&^*()&)(^*&%)",
+        setStatus: function (text) {
+        },
+    };
+
+    var gg_IsTouchScreenRotate = false;
+
+    function RotateCanvas() {
+        //debugger;
+        var canvas = document.getElementById('canvas');
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+        // var w = canvas.width;
+        // var h = canvas.height;
+        if ((width >= height) || (w >= h)) {
+            var w = width;
+            var h = height;
+            wxWindowResize(w, h);
+            canvas.style.position = "fixed";
+            canvas.style.top = 0;
+            canvas.style.left = 0;
+            canvas.style.transform = "none";
+            canvas.style.transformOrigin = "50% 50%";
+            gg_IsTouchScreenRotate = false;
+            return;
+        }
+        var w = height;
+        var h = width;
+        wxWindowResize(w, h);
+        canvas.style.position = "fixed";
+        canvas.style.top = (w - h) / 2;//must above the rotate~~~@_@
+        canvas.style.left = width - (w + h) / 2;
+        canvas.style.transform = "rotate(90deg)";
+        canvas.style.transformOrigin = "50% 50%";
+        //alert(width + " h=" + height+" window.devicePixelRatio= "+window.devicePixelRatio);
+        gg_IsTouchScreenRotate = true;
+    }
+
+    function SubOrientationChangeEvent() {
+        var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+        window.addEventListener(evt, function () {
+            wxHUDPrint("the event: " + evt);
+            //alert(evt);
+            setTimeout(function () {
+                RotateCanvas();
+            }, 300);
+        }, false);
+    }
+    function onCursorModeChange(isOn) {
+    document.getElementById('cursor-mode-state').innerText = 'Cursor Mode: ' + (isOn ? 'On' : 'Off');
+}
+</script>
+
+<script async src="./WoXiaow.js"></script>
+
+</body>
+
+</html>
+
