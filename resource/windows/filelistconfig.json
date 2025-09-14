@@ -1,0 +1,102 @@
+{
+    "scene": 
+    [
+      {
+        "name":"PrIIIcKoLyAZZZTown",
+        "title":"MY VAST TOWN",
+        "pos":"0,-20500,6300, 96, 13",
+        "desc": "A vast town blending royal castles, mechanical houses, an underground settlement, a watertown, a beach, and a Roman Colosseum."
+      },
+      {
+        "name":"WesternTown",
+        "title":"WESTERN TOWN",
+        "pos":"100000,3800,11600, 96, 13",
+        "desc": "A beautiful Western Spawn with Beautiful House and the Saloon have interior."
+      },
+      {
+        "name":"HHU",
+        "title":"HHU",
+        "pos":"14500,-2800,1100, 0, 0",
+        "desc": "Step into a retro voxel tribute to HHU! Discover miniature versions of Nanjing’s water-research hubs, bustling libraries, and serene riverside paths—all crafted in colorful cubes. Perfect for alumni and water-science enthusiasts!"
+      }
+    ],
+    "audio": 
+    [
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/3am_waffles_and_regrets.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/anthem_of_the_shattered.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/asphalt_dreams.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/battle_hymn_of_the_broken.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/battle_of_shadows.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/clouds_in_my_mind.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/drizzle_echoes.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/electric_fields.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/fog_in_my_soul.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/fuel_for_the_miles.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/gravy_train.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/highway_fuel.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/neon_meadows.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/pass_the_gravy.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/petrol_for_the_road.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/rain_parade.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/rain_shadows.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/stormfront_procession.uasset",
+        "file": "sound100.pak"
+      },
+      {
+        "name": "../../../WoXiao2/Content/Universe/Sounds/Background/Random/war_of_phantoms.uasset",
+        "file": "sound100.pak"
+      }
+    ]
+  }

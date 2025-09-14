@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://c2.world/resource/windows/sound100.pak",
+    "type": "audio",
+    "size": 41051048,
+    "path": ""
+  },
+  {
+    "url": "https://c2.world/resource/windows/PrIIIcKoLyAZZZTown.zip",
+    "type": "scene",
+    "size": 36539799,
+    "path": ""
+  },
+  {
+    "url": "https://c2.world/resource/windows/WesternTown.zip",
+    "type": "scene",
+    "size": 7607125,
+    "path": ""
+  },
+  {
+    "url": "https://c2.world/resource/windows/filelistconfig.json",
+    "type": "config",
+    "size": 2633,
+    "path": ""
+  },
+  {
+    "url": "https://c2.world/resource/windows/HHU.zip",
+    "type": "scene",
+    "size": 4187397,
+    "path": ""
+  }
+]
