@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Epic Games Redirect Handler</title>
+  <script>
+    (function() {
+      // 从 URL 获取参数
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      const state = params.get("state");
+      const error = params.get("error");
+
+      // 显示在网页上（调试时可用）
+      document.body.innerHTML = `
+        <h2>Epic OAuth Redirect</h2>
+        <p><b>Code:</b> ${code || "(none)"}</p>
+        <p><b>State:</b> ${state || "(none)"}</p>
+        <p><b>Error:</b> ${error || "(none)"}</p>
+      `;
+
+    //   // 可选：如果你的游戏有自定义协议（如 woxiao://callback?code=...）
+    //   // 可以尝试自动跳回客户端
+    //   if (code) {
+    //     const gameUrl = `woxiao://eos-login?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+    //     window.location.href = gameUrl;
+    //   }
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>
